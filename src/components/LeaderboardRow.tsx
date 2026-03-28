@@ -1,4 +1,4 @@
-import { LeaderboardEntry } from "../data/leaderboard";
+import { COMPANY_PLACEHOLDER, LeaderboardEntry } from "../data/leaderboard";
 
 interface LeaderboardRowProps {
   entry: LeaderboardEntry;
@@ -52,6 +52,9 @@ function ChampionAvatar({ name, imageUrl, rank }: { name: string; imageUrl: stri
 }
 
 export function LeaderboardRow({ entry, index }: LeaderboardRowProps) {
+  const companyClass = `leaderboard-company font-sans ${
+    entry.companyName === COMPANY_PLACEHOLDER ? "leaderboard-company--placeholder" : ""
+  }`;
   const rowClass =
     entry.rank === 1
       ? "rank-gold leaderboard-top-row leaderboard-top-row--gold row-hover"
@@ -85,11 +88,11 @@ export function LeaderboardRow({ entry, index }: LeaderboardRowProps) {
       </td>
 
       <td className="leaderboard-body-cell align-middle">
-        <span className="leaderboard-handle text-neutral-300">{entry.nickname}</span>
+        <span className="leaderboard-handle">{entry.nickname}</span>
       </td>
 
       <td className="leaderboard-body-cell align-middle">
-        <span className="leaderboard-company font-sans text-neutral-200">{entry.companyName}</span>
+        <span className={companyClass}>{entry.companyName}</span>
       </td>
 
       <td className="leaderboard-body-cell text-right align-middle">

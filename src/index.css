@@ -231,9 +231,9 @@ body {
 
   .leaderboard-head-label {
     display: inline-block;
-    color: rgba(236, 241, 252, 0.82);
+    color: rgba(229, 232, 244, 0.9);
     text-shadow:
-      0 0 12px rgba(72, 190, 255, 0.08),
+      0 0 14px rgba(170, 180, 255, 0.12),
       0 1px 0 rgba(0, 0, 0, 0.35);
     letter-spacing: 0.18em;
   }
@@ -287,18 +287,36 @@ body {
     display: inline-block;
     font-family: "Montserrat", var(--font-sans);
     font-weight: 600;
+    color: rgba(244, 221, 182, 0.92);
     letter-spacing: 0.01em;
     line-height: 1.35;
     white-space: normal;
     overflow-wrap: anywhere;
+    text-shadow:
+      0 0 12px rgba(255, 203, 133, 0.12),
+      0 1px 0 rgba(0, 0, 0, 0.34);
   }
 
   .leaderboard-company {
     display: inline-block;
+    color: rgba(244, 221, 182, 0.92);
     max-width: min(13vw, 190px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-shadow:
+      0 0 12px rgba(255, 203, 133, 0.12),
+      0 1px 0 rgba(0, 0, 0, 0.34);
+  }
+
+  .leaderboard-company--placeholder {
+    color: rgba(236, 242, 248, 0.78);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    white-space: pre;
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.06),
+      0 1px 0 rgba(0, 0, 0, 0.3);
   }
 
   .leaderboard-rank-badge {

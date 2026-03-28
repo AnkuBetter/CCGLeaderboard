@@ -16,6 +16,7 @@ const POPEYE_AVATAR_URL = `${import.meta.env.BASE_URL}avatars/special/popeye.png
 
 export const MAX_LEADERBOARD_ENTRIES = 24;
 export const LEADERBOARD_PAGE_SIZE = 8;
+export const COMPANY_PLACEHOLDER = ". . .";
 
 export interface LeaderboardListItem {
   id: string;
@@ -41,20 +42,20 @@ export interface LeaderboardEntry {
 }
 
 const HANDLE_BY_RANK: Record<number, string> = {
-  1: "Bro Unlocked God Mode",
-  2: "He'll Sell You Your Car Back",
-  3: "Someone Drug Test This Man",
-  4: "If He Hands You a Card, Say Yes",
+  1: "Unlocked God Mode",
+  2: "They'll Sell You Your Car Back",
+  3: "Someone Drug Test This Person",
+  4: "If They Hand You a Card, Say Yes",
   5: "Closing Deals Like a Psychopath",
-  6: "Moving Like the IRS Is Behind Him",
+  6: "Moving Like the IRS Is Behind Them",
   7: "Networking Like Child Support Is Due",
-  8: "Built Different, According to Him",
+  8: "Built Different, According to Them",
   9: "Practiced the Elevator Pitch in the Mirror",
-  10: "Walking Like He Owns the Place",
-  11: "Your Wife Asked About Him",
+  10: "Walking Like They Own the Place",
+  11: "People Are Asking About Them",
   12: "Still Rating Body Work in the Parking Lot",
   13: "LinkedIn Pic Still From 2014",
-  14: "His Wife Is Tracking Him",
+  14: "Someone's Tracking Their Location",
   15: "Took 12 Snacks, Gave No Cards",
   16: "One Card In, Already Tired",
   17: "Googled \"How to Network\" in the Uber",
@@ -138,7 +139,7 @@ export function mapLeaderboardEntry(item: LeaderboardListItem): LeaderboardEntry
     rank: item.rank,
     nickname: HANDLE_BY_RANK[item.rank] ?? `Rank ${String(item.rank).padStart(2, "0")}`,
     championName,
-    companyName: item.company?.trim() || "Unlisted",
+    companyName: item.company?.trim() || COMPANY_PLACEHOLDER,
     score: Math.max(0, rawValue) * 1000,
     avatarUrl: getRankAvatarUrl(item.rank),
   };
